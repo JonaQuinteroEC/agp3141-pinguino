@@ -1,5 +1,5 @@
-## Clase de código en vivo para el curso AGP3141
-Datos: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/), los datos los descargué desde un repositorio de GitHub
+## Clase para curso AGP3141
+Datos: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)
 
-1. Cargar los datos
+1. Cargar los datos (en excel desde el paquete de R ´palmerpenguins´
 2. Hacer un análisis exploratorio
