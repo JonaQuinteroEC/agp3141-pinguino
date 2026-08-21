@@ -23,4 +23,4 @@ mass_flipper <- ggplot(data = pinguinos,
 
 # Guardar plot como TIFF --------------------------------------------------
 
-ggsave("plot/plot-pinguino.tiff", mass_flipper, device = "tiff")
+ggsave("plot/plot-pinguino.tiff", mass_flipper, height = 3, width = 6, device = "tiff")
