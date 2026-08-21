@@ -21,7 +21,7 @@ py_guinos.shape # atributo no funcion, por eso sin parentesis
 # Head y summary ----------------------------------------------------------
 py_guinos.head()
 
-py_guinos.describe(include = ['float', 'category'])
+py_guinos.describe(include = ['float', 'object']) # revisar
 
 # Exploración -------------------------------------------------------------
 

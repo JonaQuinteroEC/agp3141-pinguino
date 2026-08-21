@@ -5,17 +5,18 @@
 
 # Cargo librerias ---------------------------------------------------------
 library(tidyverse)
+library(readxl)
 
 # Cargo datos pinguinos ---------------------------------------------------
-pinguinos <- read_excel("datos/penguins.xlsx")
+pinguinos <- read_excel("datos/penguins.xlsx") # n_max = 100 con n_max puedo cambiar filas
 
 # Glimpse : mirar ---------------------------------------------------------
-glimpse(pinguinos)
+glimpse(pinguinos) # hace un resumen
 
 dim(pinguinos) # filas x columnas
 
 # Head y summary ----------------------------------------------------------
-head(pinguinos)
+head(pinguinos) # por defecto 6
 
 summary(pinguinos)
 
@@ -32,6 +33,11 @@ pinguinos %>%
   summarise(mean_bill_length = mean(bill_length_mm, na.rm = TRUE),
             sd_bill_length = sd(bill_length_mm, na.rm = TRUE))
 
+pinguinos %>%
+  group_by(species) %>%
+  summarise(mean_g = mean(body_mass_g, na.rm = TRUE),
+            sd_g = sd(body_mass_g, na.rm = TRUE))
+
 # EDA ---------------------------------------------------------------------
 
 # Los Gentoo tienen mayor masa corporal promedio que Adelie y Chinstrap?
@@ -42,7 +48,7 @@ pinguinos_procesados <- pinguinos %>%
 # Por especie
 
 pinguinos_procesados %>%
-  group_by(species) %>%
+  group_by(species, sex) %>%
   summarise(
     n = n(),
     promedio = mean(body_mass_g),
